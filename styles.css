@@ -6,8 +6,10 @@ head,title,h1,h2 {
   height: auto;
 }
 
-body{
-background-image: url("background.jpg");
+.header {
+  padding: 10px 16px;
+  background: #ffe3e7 ;
+  color: #451bdd;
 }
 
 body {
@@ -18,11 +20,79 @@ body {
 
   }
   
-  .header {
-    padding: 10px 16px;
-    background: #ffe3e7 ;
-    color: #451bdd;
+  * {box-sizing: border-box;}
+
+  .topnav {
+    overflow: hidden;
+    background-color: #ffffff;
   }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(180, 180, 180);
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #2196F3;
+    color: rgb(201, 201, 201);
+  }
+  
+  .topnav .search-container {
+    float: right;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    background-color: rgb(255, 234, 234);
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .search-container button:hover {
+    background: rgb(250, 146, 146);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav .search-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid rgb(255, 255, 255);  
+      
+    }
+  }
+
+
 
   .content {
     padding: 16px;
@@ -54,6 +124,46 @@ body {
       }
       .menu li {
         display: inline-block;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+      }
+      
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #008CBA;
+      }
+      
+      .container:hover .overlay {
+        opacity: 1;
+      }
+      
+      .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
 
      * {
